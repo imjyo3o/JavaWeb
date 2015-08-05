@@ -211,6 +211,11 @@ body {
 	width: 400px;
 }
 
+#notice td:FIRST-CHILD+td{
+	text-align: left;
+	text-indent: 10px;
+}
+
 #notice td:FIRST-CHILD+td+td,
 #notice th:FIRST-CHILD+th+th{
 	width: 100px;
@@ -232,6 +237,33 @@ body {
 
 #notice th:FIRST-CHILD{
 	background: #f5f5f5;
+}
+
+#pager{
+	border: 1px solid blue;
+	display: inline-block;
+}
+
+#pager >*{
+	border: 1px solid green;
+	height: 25px;
+	float:left;
+	line-height: 25px;
+	
+}
+
+#pager ul{
+	border: 1px solid red;
+display: inline-block;
+}
+
+#pager li{
+	width: 25px;
+	height: 25px;
+	line-height: 25px; /* 수직정렬 */
+	border: 1px solid gray; /* 수평정렬 */
+	float: left;
+	text-align: center;
 }
 
 /* ---------------아이템 위치 설정 작업-------------------- */
@@ -256,6 +288,9 @@ body {
 	left: 468px;
 	top: 21px;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -407,12 +442,13 @@ body {
 				</section>
 
 				<section>
-					<h1>현재 페이지 번호</h1>
+					<h1 class="hidden">현재 페이지 번호</h1>
 					<p>1 of 3 pages</p>
 				</section>
 
-				<nav>
-					<h1>페이지</h1>
+				<nav id="pager">
+					<h1 class="hidden">페이지</h1>
+					<p><a href="">이전</a></p>
 					<ul>
 						<li><a href="">1</a></li>
 						<li><a href="">2</a></li>
@@ -420,6 +456,7 @@ body {
 						<li><a href="">4</a></li>
 						<li><a href="">5</a></li>
 					</ul>
+					<p><a href="">다음</a></p>
 				</nav>
 			</section>
 			</main>
