@@ -2,9 +2,19 @@
 <html>
 
 <script>
-	var y;
-	var x = 3;
-	alert(y == undefined);
+	function f1(){
+		a=1;
+		f2();
+		function f2(){
+			a=2;
+			f3();
+			function f3(){
+				a=3;
+			}
+		}
+	}
+	f1()
+	alert(a);
 </script>
 
 <head>
@@ -32,7 +42,7 @@ body {
 	text-indent: -100px;
 	overflow: hidden;
 }
- 
+
 .button:hover {
 	cursor: pointer;
 }
@@ -124,7 +134,8 @@ body {
 }
 
 #lecture-search-form {
-	position: relative; width : 222px; /*308-55-31*/
+	position: relative;
+	width: 222px; /*308-55-31*/
 	height: 25px;
 	padding-left: 55px;
 	padding-right: 31px;
