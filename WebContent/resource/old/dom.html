@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	window.addEventListener("load", function() {
+		var photos = document.getElementById("photos");
+					var items = photos.getElementsByTagName("img");
+					
+					var btnImgChange1=document.getElementById("btn-img-change1");
+					var btnImgChange2=document.getElementById("btn-img-change2");
+					var btn
+					
+					
+					btnImgChange1.onclick=function(){
+						
+						var txtImage= document.getElementById("txt-image");
+						
+						for (var i = 0; i < items.length; i++)
+							items[i].src = "../images/"+txtImage.value;
+						
+						
+					};
+					
+					btnImgChange2.onclick=function(){
+						
+						var cbImage= document.getElementById("cb-image");
+						
+						for (var i = 0; i < items.length; i++)
+							items[i].src = "../images/"+cbImage.value;
+						
+						
+					};
+					
+
+				/* 	var btnAddText= document.getElementById("btn-add-text");
+					btnAddText.onclick = function(){
+						
+						var photos =document.getElementById("photos");
+						var lis = photos.getElementsByTagName("li");
+						var parent = lis[0]; 
+						
+						var txt = document.createTextNode("안녕하세요");
+						parent.appendChild(txt);
+						
+						/* var lis = document.getElementById("photos").getElementsByTagName("li")[0].appendChild(txt); */
+						/* 	document create
+						parent.appendChild 
+					} */
+					
+					/* --------이미지추가-------- */
+					var btnAddText= document.getElementById("btn-add-text");
+					btnAddText.onclick = function(){
+						
+						var photos =document.getElementById("photos");
+						var lis = photos.getElementsByTagName("li");
+						var parent = lis[0]; 
+					
+						var txt = document.createTextNode("안녕하세요");
+						parent.appendChild(txt);
+						
+						/* var lis = document.getElementById("photos").getElementsByTagName("li")[0].appendChild(txt); */
+/* 						document create
+						parent.appendChild */
+					}
+						
+			});
+	
+</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>images/<input id="txt-image" type="text" /> <input
+				id="btn-img-change1" type="button" value="변경" />
+			</li>
+
+			<li>images/ <select id="cb-image">
+					<option value="mr.joo.jpg">첫번째 이미지</option>
+					<option value="gongu.jpg">두번째 이미지</option>
+					<option value="soganzi.jpg">세번째 이미지</option>
+			</select> <input id="btn-img-change2" type="button" value="변경">
+			</li>
+			<li><input type="button" id="btn-add-text" value="텍스트 추가" /></li>
+		</ul>
+	</div>
+
+	<ul id="photos">
+		<li><img src="../images/mr.joo.jpg" /></li>
+		<li><img src="../images/gongu.jpg" /></li>
+		<li><img src="../images/soganzi.jpg" /></li>
+	</ul>
+	<input />
+</body>
+</html>
