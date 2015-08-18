@@ -11,7 +11,6 @@
 					
 					var btnImgChange1=document.getElementById("btn-img-change1");
 					var btnImgChange2=document.getElementById("btn-img-change2");
-					var btn
 					
 					
 					btnImgChange1.onclick=function(){
@@ -64,9 +63,79 @@
 						/* var lis = document.getElementById("photos").getElementsByTagName("li")[0].appendChild(txt); */
 /* 						document create
 						parent.appendChild */
-					}
+					};
+					
+					
+					var btnAddImg= document.getElementById("btn-add-img");
+					btnAddImg.onclick = function(){
 						
+						var photos =document.getElementById("photos");
+						var lis = photos.getElementsByTagName("li");
+						var parent = lis[0]; 
+					
+						var img = document.createElement("img");
+						img.src="../images/mr.joo.jpg";
+						
+						parent.appendChild(img);
+						
+					};
+					
+					
+					var btnAddImg= document.getElementById("btn-del-child");
+					btnAddImg.onclick = function(){
+						
+						var photos =document.getElementById("photos");
+						var lis = photos.getElementsByTagName("li");
+						var parent = lis[0]; 
+					
+						parent.removeChild(parent.lastChild);
+						
+					};
+					
+					var btnCloneChild= document.getElementById("btn-clone-child");
+					btnCloneChild.onclick = function(){
+						//복제될 엘레먼트 노드 얻기
+						var photos =document.getElementById("photos");
+						var lis = photos.getElementsByTagName("li");
+						var target = lis[0]; 
+
+						var clone = target.cloneNode(true);
+						photos.appendChild(clone);
+					};
+					
+					var btnChangeNode= document.getElementById("btn-change-nodes");
+					btnChangeNode.onclick = function(){
+						var photos = document.getElementById("photos");
+						var ckboxs = photos.getElementsByTagName("input");
+						//ckbox[0].checked
+						
+						
+						//선택 개수를 알아보는 코드
+						var cntChecked = 0;
+						for(var i=0; i<ckboxs.length; i++)	//노드 수만큼 반복
+							if(ckboxs[i].checked)	//체크 상태 확인
+								cntChecked++;	//체크 수를 증가
+						
+						//선택이 2개가 되지  않은 경우 메세지를 출력
+						if(cntChecked != 2){
+							alert("노드는 두 개를 선택해야 해욥~~");
+							
+							return
+						}
+						
+						
+						var lis = [];
+						
+						for(var i=0; i<ckboxs.length; i++)	
+							if(ckboxs[i].checked)
+									lis[j++] = ckboxs[i].parentNode;
+						
+						lis[0]
+						
+						
+					};
 			});
+	
 	
 </script>
 </head>
@@ -81,16 +150,25 @@
 					<option value="mr.joo.jpg">첫번째 이미지</option>
 					<option value="gongu.jpg">두번째 이미지</option>
 					<option value="soganzi.jpg">세번째 이미지</option>
-			</select> <input id="btn-img-change2" type="button" value="변경">
+			</select> 
+			
+			<input id="btn-img-change2" type="button" value="변경">
 			</li>
-			<li><input type="button" id="btn-add-text" value="텍스트 추가" /></li>
+			
+			<li>
+			<input type="button" id="btn-add-text" value="텍스트 추가" />
+			<input type="button" id="btn-add-img" value="이미지 추가" />
+			<input type="button" id="btn-del-child" value="막내 제거" />
+			<input type="button" id="btn-clone-child" value="첫째 아들 복제" />
+			<input type="button" id="btn-change-nodes" value="두개의 노드 교체" />
+			</li>
 		</ul>
 	</div>
 
 	<ul id="photos">
-		<li><img src="../images/mr.joo.jpg" /></li>
-		<li><img src="../images/gongu.jpg" /></li>
-		<li><img src="../images/soganzi.jpg" /></li>
+		<li><input type="checkbox" /><img src="../images/mr.joo.jpg" /></li>
+		<li><input type="checkbox" /><img src="../images/gongu.jpg" /></li>
+		<li><input type="checkbox" /><img src="../images/soganzi.jpg" /></li>
 	</ul>
 	<input />
 </body>

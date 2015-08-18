@@ -4,8 +4,66 @@
 <meta charset="UTF-8">
 <title>New lecture</title>
 <link href="../css/reset.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../js/modernizr.js"></script>
 <link href="../Customer/css/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" >
+/* 
+	window.addEventListener("load", function() {
+		
+		var data = [
+		            {code:"1", title:"스크립트란?", writer:"뿅지" regdate:"2015-08-14" hit:2},
+		            {code:"2", title:"DOM이란?", writer:"뿅지" regdate:"2015-08-14" hit:8},
+		            {code:"3", title:"오잉.........?", writer:"뿅지" regdate:"2015-08-14" hit:6},
+		            {code:"4", title:"뭔소리다냐?", writer:"뿅지" regdate:"2015-08-14" hit:5},
+		            {code:"5", title:"하하하하하하하하하", writer:"뿅지" regdate:"2015-08-14" hit:3}
+		           ];
+		
+		//var btnAddRow = document.getElementById("btn-add-row");
+		var btnAddRow = document.querySelector("#btn-add-row");
+		btnAddRow.onclick = function() {
+			var notice = document.querySelector("#notice");
+			var tbody = document.querySelector("tbody");
+			var row = tbody.querySelector("tr:first-child");
+
+			for(var i=0; i<data.length; i++){
+			var clone = row.cloneNode(true);
+			clone.querySelector("td:first-child").innerText =data[i].code;
+			clone.querySelector("td:first-child+td>a").innerText =data[i].title;
+			tbody.appendChild(clone);
+			}
+			
+
+		};
+
+	}); */
+	
+	window.addEventListener("load", function(){
+		
+		var btnAddRow = document.querySelector("#btn-add-row");
+		
+		var data = [
+		            {code:"1", title:"스크립트란?", writer:"뿅지", regdate:"2015-08-14", hit:2},
+		            {code:"2", title:"DOM이란?", writer:"뿅지", regdate:"2015-08-14", hit:8},
+		            {code:"3", title:"오잉.........?", writer:"뿅지", regdate:"2015-08-14", hit:6},
+		            {code:"4", title:"뭔소리다냐?", writer:"뿅지", regdate:"2015-08-14", hit:5},
+		            {code:"5", title:"하하하하하하하하하", writer:"뿅지", regdate:"2015-08-14", hit:3},
+		           ];
+		
+		btnAddRow.onclick = function() {
+			
+				var notice = document.querySelector("#notice");
+				var tbody = document.querySelector("tbody");
+				var row = tbody.querySelector("tr:first-child");
+	
+				for(var i=0; i<data.length; i++){
+				var clone = row.cloneNode(true);
+				clone.querySelector("td:first-child").innerText =data[i].code;
+				clone.querySelector("td:first-child+td>a").innerText =data[i].title;
+				tbody.appendChild(clone);
+			
+			}
+	});
+	
+</script>
 <style>
 
 /* -------------------가구 만드는 작업--------------------- */
@@ -25,7 +83,7 @@ body {
 	text-indent: -100px;
 	overflow: hidden;
 }
- 
+
 .button:hover {
 	cursor: pointer;
 }
@@ -117,7 +175,8 @@ body {
 }
 
 #lecture-search-form {
-	position: relative; width : 222px; /*308-55-31*/
+	position: relative;
+	width: 222px; /*308-55-31*/
 	height: 25px;
 	padding-left: 55px;
 	padding-right: 31px;
@@ -157,21 +216,20 @@ body {
 	float: right;
 }
 
-#aside > h1{
-    font-family: 맑은 고딕, 고딕, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
+#aside>h1 {
+	font-family: 맑은 고딕, 고딕, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #000;
 }
-	
-#aside-menu li
-{
+
+#aside-menu li {
 	background: url("../images/bg-aside-menu-hsp.png") no-repeat left bottom;
 	height: 26px;
 	line-height: 26px;
 }
 
-#aside-menu li a{
+#aside-menu li a {
 	font-family: 맑은고딕, Arial, sans-serif;
 	font-weight: bold;
 	color: #808080;
@@ -183,81 +241,74 @@ body {
 	background: url("../images/icon-current.png") no-repeat 15px center;
 }
 
-#notice table{
+#notice table {
 	border-top: 2px solid #8cba35;
 	border-collapse: collapse;
 	border-spacing: 0px;
 }
 
-#notice tr{
+#notice tr {
 	height: 30px;
 	line-height: 30px;
 }
 
-#notice td, th{
+#notice td, th {
 	text-align: center;
-	border-bottom : 1px #e9e9e9 solid;
+	border-bottom: 1px #e9e9e9 solid;
 }
 
-
-
-#notice td:FIRST-CHILD,
-#notice th:FIRST-CHILD{
+#notice td:FIRST-CHILD, #notice th:FIRST-CHILD {
 	width: 60px;
 }
 
-#notice td:FIRST-CHILD+td,
-#notice th:FIRST-CHILD+th{
+#notice td:FIRST-CHILD+td, #notice th:FIRST-CHILD+th {
 	width: 400px;
 }
 
-#notice td:FIRST-CHILD+td{
+#notice td:FIRST-CHILD+td {
 	text-align: left;
 	text-indent: 10px;
 }
 
-#notice td:FIRST-CHILD+td+td,
-#notice th:FIRST-CHILD+th+th{
+#notice td:FIRST-CHILD+td+td, #notice th:FIRST-CHILD+th+th {
 	width: 100px;
 }
 
-#notice td:FIRST-CHILD+td+td+td,
-#notice th:FIRST-CHILD+th+th+th{
+#notice td:FIRST-CHILD+td+td+td, #notice th:FIRST-CHILD+th+th+th {
 	width: 100px;
 }
 
-#notice td:FIRST-CHILD+td+td+td+td,
-#notice th:FIRST-CHILD+th+th+th+th{
+#notice td:FIRST-CHILD+td+td+td+td, #notice th:FIRST-CHILD+th+th+th+th {
 	width: 60px;
 }
 
-#notice th{
-	background: #f5f5f5 url("../images/bg-title-sp.png") no-repeat left center;
+#notice th {
+	background: #f5f5f5 url("../images/bg-title-sp.png") no-repeat left
+		center;
 }
 
-#notice th:FIRST-CHILD{
+#notice th:FIRST-CHILD {
 	background: #f5f5f5;
 }
 
-#pager{
+#pager {
 	border: 1px solid blue;
 	display: inline-block;
 }
 
-#pager >*{
+#pager>* {
 	border: 1px solid green;
 	height: 25px;
-	float:left;
+	float: left;
 	line-height: 25px;
-	
 }
 
-#pager ul{
+#pager ul {
 	border: 1px solid red;
-display: inline-block;
+	display: inline-block;
 }
 
-#pager li{
+#pager li {
 	width: 25px;
 	height: 25px;
 	line-height: 25px; /* 수직정렬 */
@@ -288,9 +339,6 @@ display: inline-block;
 	left: 468px;
 	top: 21px;
 }
-
-
-
 </style>
 </head>
 <body>
@@ -354,7 +402,7 @@ display: inline-block;
 
 	<div id="body">
 		<div class="content-wrapper clearfix">
-		
+
 			<aside id="aside">
 				<h1>고객센터</h1>
 
@@ -441,6 +489,10 @@ display: inline-block;
 					</table>
 				</section>
 
+				<div>
+					<input type="button" id="btn-add-row" value="추가" />
+				</div>
+
 				<section>
 					<h1 class="hidden">현재 페이지 번호</h1>
 					<p>1 of 3 pages</p>
@@ -448,7 +500,9 @@ display: inline-block;
 
 				<nav id="pager">
 					<h1 class="hidden">페이지</h1>
-					<p><a href="">이전</a></p>
+					<p>
+						<a href="">이전</a>
+					</p>
 					<ul>
 						<li><a href="">1</a></li>
 						<li><a href="">2</a></li>
@@ -456,7 +510,9 @@ display: inline-block;
 						<li><a href="">4</a></li>
 						<li><a href="">5</a></li>
 					</ul>
-					<p><a href="">다음</a></p>
+					<p>
+						<a href="">다음</a>
+					</p>
 				</nav>
 			</section>
 			</main>
